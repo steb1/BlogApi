@@ -1,0 +1,23 @@
+<%- include("./partials/header") %>
+<%- include("./partials/navbar") %>
+
+<div class="container mt-5 py-5">
+    <h3>Les Livres </h3>
+
+    <% livres.reverse() %> 
+
+    <% livres.forEach(Livre => { %>
+    <div class="card mt-3">
+        <div class="card-body">
+            <p class="text-muted">publie le: <%= livres.DateSortie %> </p>
+            <h5 class="card-title"><%= livres.Titre %> </h5>
+            <p class="card-text"> .... <a href="/Livre/<%= livres._id %>">Read More</a></p>
+            <a href=" /voirlivre/<%= livres._id %>" class="btn btn-primary">Plus...</a>
+            <a href=" /supprimer/<%= livres._id %>" class="btn btn-danger">Supprimer</a>
+            <a href=" /modifier/<%= livres._id %>" class="btn btn-warning">Modifier</a>
+            <a href=" /modifier/<%= livres._id %>" class="btn btn-warning">Ajouter a mon </a>
+        </div>
+    </div>
+    <%}) %>
+
+<%- include("./partials/footer") %>
